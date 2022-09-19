@@ -1,5 +1,6 @@
 import User from "./User";
 import {useEffect, useState} from "react";
+import {getUsers} from "../services/fetch.services";
 
 export default function Users() {
 
@@ -12,18 +13,13 @@ export default function Users() {
 
     useEffect(() => {
 
-        fetch('https://jsonplaceholder.typicode.com/users')
-            .then(value => value.json())
-            .then(value => {
-                setUsers(value)
-            });
-
-    }, [])
+      getUsers().then(value => setUsers(value));
+    }, []);
 
 
     return (
         <div>
-            <h2>{user && user.name}  </h2>
+            <h2>{user && user.name} </h2>
             <h3>{user?.email} </h3>
             <hr/>
 
