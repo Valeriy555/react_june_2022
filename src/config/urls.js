@@ -1,8 +1,8 @@
-const baseURL = process.env.REACT_APP_API
-export default baseURL
+const baseURL = "https://jsonplaceholder.typicode.com"
+
 
 const urls = {
     users:'/users',
     posts:'/posts'
 }
-export {urls}
+export {baseURL,urls}
