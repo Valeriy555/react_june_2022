@@ -1,7 +1,7 @@
 import {baseURL, urls} from "../../config";
 
 
-const getUsers = () => {
+const getFetchUsers = () => {
 
    return fetch(baseURL+urls.users)
         .then(value => value.json())
@@ -15,4 +15,4 @@ const getUsers = () => {
 
 }
 
-export {getUsers,getUser}
+export {getFetchUsers,getUser}
