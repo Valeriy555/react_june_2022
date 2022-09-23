@@ -1,0 +1,9 @@
+.Cars{
+    border: 1px solid brown;
+    margin: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 1300px;
+}
+
