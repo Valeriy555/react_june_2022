@@ -7,7 +7,8 @@ import css from "./Cars.module.css";
 
 
 const Cars = () => {
-    let [cars, setCars] = useState([]);
+    const [cars, setCars] = useState([]);
+    const [updateCar, setUpdateCar ] = useState(null);
 
     useEffect(() => {
         carService.getAll().then(({data}) => setCars(data))
@@ -16,10 +17,10 @@ const Cars = () => {
 
     return (
         <div>
-            <CarForm setCars={setCars}/>
+            <CarForm setCars={setCars} updateCar ={updateCar} setUpdateCar ={setUpdateCar} />
             <hr/>
             <div className={css.Cars}>
-                {cars.map(car => <Car key={car.id} car={car}/>)}
+                {cars.map(car => <Car key={car.id} car={car} setCars={setCars} setUpdateCar={setUpdateCar}/>)}
             </div>
 
         </div>
