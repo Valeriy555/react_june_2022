@@ -1,7 +1,7 @@
-import User from "./User";
 import {useState} from "react";
+import {User} from "./User";
 
-export default function Users() {
+export function Users() {
 
     let [users, setUsers] = useState([]);
 

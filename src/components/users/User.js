@@ -1,4 +1,4 @@
-export default function User(props) {
+export  function User(props) {
     let {item: user} = props
 
     return (
