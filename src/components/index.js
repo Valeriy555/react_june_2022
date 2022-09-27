@@ -1,5 +1,7 @@
 export * from './home/Home'
 export * from './users/Users'
 export * from './users/User'
+export * from './users/UserDetails'
+export * from './users/UserDetailsV2'
 export * from './posts/Posts'
 export * from './posts/Post'
