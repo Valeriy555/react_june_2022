@@ -6,6 +6,8 @@ const UserDetails = () => {
 
     return (
         <div>
+            <h2>option with "useLocation" </h2>
+
             <h3>{user.id}) {user.name} - {user.username}</h3>
             <p><b>Address:</b>  {user.address.city}</p>
             <p><b>Phone: </b>{user.phone} </p>

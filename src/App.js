@@ -3,8 +3,6 @@ import {Link, Route, Routes} from "react-router-dom";
 import {Home, UserDetails, UserDetailsV2, Users} from "./components";
 
 
-
-
 function App() {
 
     return (
@@ -18,11 +16,15 @@ function App() {
             <hr/>
             <Routes>
                 <Route path={'/'} element={<Home/>}/>
-                <Route path={'users'} element={<Users/>}/>
+                <Route path={'users'} element={<Users/>}>
+                    <Route path={':id'} element={<UserDetails/>}/>
+                    <Route path={'v2/:id'} element={<UserDetailsV2/>}/>
 
-                <Route path={'users/:id'} element={<UserDetails/>}/>
-                <Route path={'users/v2/:id'} element={<UserDetailsV2/>}/>
-                <Route/>
+                </Route>
+
+                {/*<Route path={'users/:id'} element={<UserDetails/>}/>*/}
+                {/*<Route path={'users/v2/:id'} element={<UserDetailsV2/>}/>*/}
+
             </Routes>
 
             <hr/>

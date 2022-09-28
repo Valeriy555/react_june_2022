@@ -8,12 +8,18 @@ export  function User(props) {
             <h2>{user.id}) {user.name}</h2>
 
             <div>
-                <Link to={`/users/${user.id}`} state={{...user}}>details</Link>
+                <Link to={`/users/${user.id}`} state={{...user}}>
+                  <button key={user.id}>details</button>
+                </Link>
             </div>
 
             <div>
-                <Link to={`/users/v2/${user.id}`} state={{...user}}>details v2</Link>
+                <Link to={`/users/v2/${user.id}`} state={{...user}}>
+                    <button key={user.id}>details v2</button>
+                    </Link>
             </div>
+
+
             <hr/>
         </div>
     );
