@@ -1,6 +1,6 @@
 import './App.css';
 import {Link, Route, Routes} from "react-router-dom";
-import {Home, UserDetails, UserDetailsV2, Users} from "./components";
+import {Home, Posts, UserDetails, UserDetailsV2, Users} from "./components";
 
 
 function App() {
@@ -22,8 +22,7 @@ function App() {
 
                 </Route>
 
-                {/*<Route path={'users/:id'} element={<UserDetails/>}/>*/}
-                {/*<Route path={'users/v2/:id'} element={<UserDetailsV2/>}/>*/}
+                <Route path={'posts'} element={<Posts/>}/>
 
             </Routes>
 

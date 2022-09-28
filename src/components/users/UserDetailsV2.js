@@ -1,13 +1,13 @@
-import {useLocation, useParams} from "react-router-dom";
+import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 
-import { getUsersId} from "../../services";
+import {getUsersId} from "../../services";
 
 
 const UserDetailsV2 = () => {
     const {id} = useParams();
     let [userDetails, setUserDetails] = useState([]);
-    // const {state} = useLocation();
+
 
     useEffect( () => {
 

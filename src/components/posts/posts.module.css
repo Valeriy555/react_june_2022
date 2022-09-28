@@ -1,0 +1,17 @@
+.wrap{
+    display: flex;
+}
+
+.users{
+    border: 2px solid brown;
+    background: cornflowerblue;
+    width: 60%;
+
+}
+
+.details{
+    border: 2px solid brown;
+    background: slategrey;
+    width: 40%;
+}
+

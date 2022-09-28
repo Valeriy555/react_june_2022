@@ -1,1 +1,2 @@
-export * from './fetch.services'
+export * from './UserFetch.services'
+export * from './PostFetch.services'
