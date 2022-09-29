@@ -12,7 +12,7 @@ export function Posts() {
 
     useEffect(() => {
 
-        getPosts().then(value => setPosts(value));
+        getPosts().then(value => setPosts([...value]));
     }, [])
 
 

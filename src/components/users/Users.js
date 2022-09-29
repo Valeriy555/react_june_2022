@@ -11,7 +11,7 @@ export function Users() {
 
     useEffect(() => {
 
-        getUsers().then(value => setUsers(value));
+        getUsers().then(value => setUsers([...value]));
     }, [])
 
 

@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
 
-export  function User(props) {
+export function User(props) {
     let {item: user} = props
 
     return (
@@ -8,18 +8,17 @@ export  function User(props) {
             <h2>{user.id}) {user.name}</h2>
 
             <div>
-                <Link to={`/users/${user.id}`} state={{...user}}>
-                  <button key={user.id}>details</button>
+                <Link to={`${user.id}`} state={{...user}}>
+                    <button key={user.id}>details</button>
                 </Link>
             </div>
 
             <div>
-                <Link to={`/users/v2/${user.id}`} state={{...user}}>
+                <Link to={`v2/${user.id}`} state={{...user}}>
                     <button key={user.id}>details v2</button>
-                    </Link>
+                </Link>
             </div>
 
-ex
             <hr/>
         </div>
     );
