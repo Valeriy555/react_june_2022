@@ -1,9 +1,8 @@
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
 
-import {userService} from "../../services";
-import {userActions} from "../../redux";
 import {User} from "./User";
+import {userActions} from "../../redux";
 
 
 const Users = () => {
@@ -12,7 +11,7 @@ const Users = () => {
 
 
     useEffect(() => {
-        userService.getAllUsers().then(({data}) => dispatch(userActions.getAll(data)))
+        dispatch(userActions.getAll())
 
 
     }, [])

@@ -8,7 +8,7 @@ const User = ({user}) => {
         <div>
             <div>{user.id}) {user.name} </div>
 
-            <button onClick={() => dispatch(userActions.setCurrentUser(user))}>select</button>
+            <button onClick={() => dispatch(userActions.getById({id}))}>select</button>
 
             <hr/>
         </div>
