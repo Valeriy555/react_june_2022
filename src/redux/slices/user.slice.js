@@ -13,14 +13,8 @@ let initialState = {  // начальный стейт 'userSlice'
 const userSlice = createSlice({
     name: 'userSlice',
     initialState,
-    reducers: { // синхронный метод
-        getAll: (state, action) => {
-            state.users = action.payload
-        },
-        setCurrentUser: (state, action) => {
-            state.currentUser = action.payload
-        }
-    },
+    reducers: { }// синхронный метод
+
 
 });
 
