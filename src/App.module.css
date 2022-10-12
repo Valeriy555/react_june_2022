@@ -1,0 +1,14 @@
+.wrap{
+    display: flex;
+
+}
+
+.users{
+    border: 1px solid brown;
+    width: 60%;
+}
+
+.userSingle{
+    border: 1px solid blue;
+    width: 40%;
+}
