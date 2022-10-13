@@ -37,7 +37,7 @@ const getById = createAsyncThunk(
 const userSlice = createSlice({
     name: 'userSlice',
     initialState,
-    reducers: { // синхронный запрос
+    reducers: { // синхронный запрос уже с полученных данных в extraReducers
         setCurrentUser: (state, action) => {
             state.currentUser = action.payload
         },
