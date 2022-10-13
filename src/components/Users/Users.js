@@ -7,7 +7,7 @@ import {userActions} from "../../redux";
 
 const Users = () => {
     const dispatch = useDispatch(); // добавляет в стор данные (юзеров)
-    const {users} = useSelector(state => state.userReducer); // достать из стора
+    const {users,loading, error } = useSelector(state => state.userReducer); // достать из стора
 
 
     useEffect(() => {
@@ -18,6 +18,9 @@ const Users = () => {
 
     return (
         <div>
+
+            {loading && <h1>Loading........................</h1>}
+            {error && <h1>Error</h1>}
 
             {users.map(user => <User key={user.id} user={user}/>)}
 

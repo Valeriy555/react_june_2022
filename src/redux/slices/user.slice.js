@@ -5,8 +5,8 @@ let initialState = {  // начальный стейт 'userSlice'
     users: [],
     currentUser: null,
     loading: false,
-    error: null
-
+    error: null,
+    userFromApi: null
 };
 
 const getAll = createAsyncThunk(
@@ -43,13 +43,29 @@ const userSlice = createSlice({
         },
     },
 
-    extraReducers: { // ассинхронный запрос
-        [getAll.fulfilled]: (state, action) => {
-            state.users = action.payload
-        },
-
-    }
-
+    extraReducers: // ассинхронный запрос 1 вариант
+    // {
+    //     [getAll.fulfilled]: (state, action) => {
+    //         state.users = action.payload
+    //     },
+    // }
+    // ассинхронный запрос 2 вариант:
+        builder =>
+            builder
+                .addCase(getAll.fulfilled, (state, action) => { // выполненный
+                    state.users = action.payload
+                    state.loading = false
+                })
+                .addCase(getAll.rejected, (state, action) => { // отклоненный
+                    state.error = action.payload
+                    state.loading = false
+                })
+                .addCase(getAll.pending, (state, action) => { // в ожидании
+                    state.loading = true
+                })
+                .addCase(getById.fulfilled, (state, action) => { // данные юзера с апи
+                    state.userFromAPI = action.payload
+                })
 });
 
 
