@@ -43,14 +43,7 @@ const userSlice = createSlice({
         },
     },
 
-    extraReducers: // ассинхронный запрос 1 вариант
-    // {
-    //     [getAll.fulfilled]: (state, action) => {
-    //         state.users = action.payload
-    //     },
-    // }
-    // ассинхронный запрос 2 вариант:
-        builder =>
+    extraReducers: builder =>
             builder
                 .addCase(getAll.fulfilled, (state, action) => { // выполненный
                     state.users = action.payload
@@ -61,6 +54,7 @@ const userSlice = createSlice({
                     state.loading = false
                 })
                 .addCase(getAll.pending, (state, action) => { // в ожидании
+
                     state.loading = true
                 })
                 .addCase(getById.fulfilled, (state, action) => { // данные юзера с апи
