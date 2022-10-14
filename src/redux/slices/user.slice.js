@@ -11,7 +11,7 @@ let initialState = {  // начальный стейт 'userSlice'
 
 const getAll = createAsyncThunk(
     'userSlice/getAll',
-    async (_, {rejectWithValue}) => {
+    async (_, {rejectWithValue, dispatch}) => {
         try {
             const {data} = await userService.getAllUsers();
             return data
@@ -41,6 +41,10 @@ const userSlice = createSlice({
         setCurrentUser: (state, action) => {
             state.currentUser = action.payload
         },
+        deleteById:(state,action)=>{
+            const index = state.users.findIndex(user=>user.id === action.payload);
+            state.users.splice(index,1)
+        }
     },
 
     extraReducers: builder =>
@@ -63,13 +67,14 @@ const userSlice = createSlice({
 });
 
 
-const {reducer: userReducer, actions: {setCurrentUser}} = userSlice; // синхронный метод
+const {reducer: userReducer, actions: {setCurrentUser,deleteById}} = userSlice; // синхронный метод
 
 
 const userActions = {
     getAll,
     getById,
-    setCurrentUser
+    setCurrentUser,
+    deleteById
 
 }
 

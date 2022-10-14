@@ -13,6 +13,7 @@ const User = ({user}) => {
 
             <button onClick={() => dispatch(userActions.setCurrentUser(user))}>select</button>
             <button onClick={() => dispatch(userActions.getById({id}))}>getFromAPI</button>
+            <button onClick={() => dispatch(userActions.deleteById(id))}>delete</button>
 
             <hr/>
         </div>
