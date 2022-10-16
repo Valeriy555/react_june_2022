@@ -1,5 +1,5 @@
-import {Header, Posts, Users} from "./components";
-import {UserSingle} from "./components/Users/UserSingle";
+import {CarForm, Cars} from "./components";
+import {CarSingle} from "./components/Cars/CarSingle";
 import css from "./App.module.css";
 
 
@@ -7,20 +7,19 @@ function App() {
 
     return (
         <div>
-            <Header/>
+
+            <CarForm/>
             <div>
                 <div className={css.wrap}>
                     <div className={css.users}>
-                        <Users/>
+                        <Cars/>
                     </div>
                     <div className={css.userSingle}>
-                        <UserSingle/>
+                        <CarSingle/>
                     </div>
-
                 </div>
-
-                <Posts/>
             </div>
+
 
         </div>
     );
