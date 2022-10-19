@@ -1,6 +1,6 @@
-import {Header, Posts, Users} from "./components";
 import {UserSingle} from "./components/Users/UserSingle";
 import css from "./App.module.css";
+import {Header, Posts, Users} from "./components";
 
 
 function App() {
